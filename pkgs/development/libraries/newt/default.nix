@@ -38,6 +38,7 @@ stdenv.mkDerivation rec {
 
   configureFlags = lib.optionals stdenv.isDarwin [
     "--disable-nls"
+    "-headerpad_max_install_names"
   ];
 
   makeFlags = lib.optionals (stdenv.buildPlatform != stdenv.hostPlatform) [
